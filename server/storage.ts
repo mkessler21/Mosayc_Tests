@@ -1,23 +1,33 @@
 import { waitlistEntries, type WaitlistEntry, type InsertWaitlistEntry } from "@shared/schema";
-import { db } from "./db";
 
 export interface IStorage {
   createWaitlistEntry(entry: InsertWaitlistEntry): Promise<WaitlistEntry>;
   getWaitlistEntries(): Promise<WaitlistEntry[]>;
 }
 
-export class DatabaseStorage implements IStorage {
+export class MemStorage implements IStorage {
+  private entries: Map<number, WaitlistEntry>;
+  private currentId: number;
+
+  constructor() {
+    this.entries = new Map();
+    this.currentId = 1;
+  }
+
   async createWaitlistEntry(entry: InsertWaitlistEntry): Promise<WaitlistEntry> {
-    const [waitlistEntry] = await db
-      .insert(waitlistEntries)
-      .values(entry)
-      .returning();
+    const id = this.currentId++;
+    const waitlistEntry: WaitlistEntry = {
+      ...entry,
+      id,
+      createdAt: new Date(),
+    };
+    this.entries.set(id, waitlistEntry);
     return waitlistEntry;
   }
 
   async getWaitlistEntries(): Promise<WaitlistEntry[]> {
-    return await db.select().from(waitlistEntries);
+    return Array.from(this.entries.values());
   }
 }
 
-export const storage = new DatabaseStorage();
+export const storage = new MemStorage();
