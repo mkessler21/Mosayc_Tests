@@ -11,14 +11,20 @@ export default function Header() {
               alt="Mosayc.ai Logo" 
               className="h-10 w-10"
             />
-            <span className="text-xl font-semibold">
-              Mosayc.ai
-            </span>
+            <img 
+              src="/logo.png" 
+              alt="Mosayc.ai Logo"
+              className="h-10"
+            />
           </Link>
           <nav className="hidden md:flex items-center gap-6">
             <a 
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("features")?.scrollIntoView({ behavior: "smooth" });
+              }}
               href="#features" 
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
             >
               Features
             </a>
