@@ -8,9 +8,27 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative min-h-[80vh] flex items-center">
+    <div className="relative min-h-[80vh] flex items-center overflow-hidden">
+      <div className="absolute inset-0 -z-10">
+        <div className="grid grid-cols-4 gap-4 opacity-20">
+          {[...Array(16)].map((_, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              className="aspect-square bg-primary/20 rounded-lg"
+            />
+          ))}
+        </div>
+      </div>
       <div className="container mx-auto px-4 py-16">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl relative">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="absolute -right-64 top-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
+          />
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

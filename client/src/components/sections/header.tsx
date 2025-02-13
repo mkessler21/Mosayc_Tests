@@ -9,7 +9,7 @@ export default function Header() {
             <img 
               src="/logo.png" 
               alt="Mosayc.ai Logo" 
-              className="h-8 w-8"
+              className="h-10 w-10"
             />
             <span className="text-xl font-semibold">
               Mosayc.ai
