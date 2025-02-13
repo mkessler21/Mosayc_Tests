@@ -1,44 +1,44 @@
 import { motion } from "framer-motion";
 import { 
-  Brain, 
-  Target, 
-  TrendingUp, 
-  Users,
+  Brain,
+  Target,
+  Bell,
   BarChart4,
-  MessageSquareText
+  LineChart,
+  BookOpen
 } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 const features = [
   {
+    icon: Bell,
+    title: "Event Alerts",
+    description: "Receive real-time alerts about significant customer events and opportunities"
+  },
+  {
     icon: Brain,
-    title: "AI-Powered Analysis",
-    description: "Advanced machine learning algorithms analyze company data to provide actionable insights"
+    title: "GraphRAG Intelligence",
+    description: "Advanced relationship mapping using GraphRAG technology for deeper insights"
+  },
+  {
+    icon: LineChart,
+    title: "Causal Analysis",
+    description: "Discover causal relationships to understand the 'what' and 'why' of key events"
   },
   {
     icon: Target,
-    title: "Account Intelligence",
-    description: "Deep understanding of target accounts through comprehensive data analysis"
+    title: "Tailored Insights",
+    description: "Get insights aligned directly with your company's sales goals and use cases"
   },
   {
-    icon: TrendingUp,
-    title: "Growth Signals",
-    description: "Identify key growth indicators and business opportunities in real-time"
-  },
-  {
-    icon: Users,
-    title: "Decision Maker Mapping",
-    description: "Map out key decision makers and their roles within target organizations"
+    icon: BookOpen,
+    title: "Deep Research",
+    description: "Automated analysis of public data sources and internal CRM data"
   },
   {
     icon: BarChart4,
-    title: "Market Position",
-    description: "Understand company's market position and competitive landscape"
-  },
-  {
-    icon: MessageSquareText,
-    title: "Smart Recommendations",
-    description: "Get personalized outreach recommendations based on company insights"
+    title: "Strategy Recommendations",
+    description: "AI-powered recommendations for effective account strategies"
   }
 ];
 
@@ -52,9 +52,9 @@ export default function Features() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">Powerful Features</h2>
+          <h2 className="text-4xl font-bold mb-4">From Fragmented Data to Strategic Insights</h2>
           <p className="text-lg text-muted-foreground">
-            Everything you need to supercharge your B2B sales efforts
+            Helping AEs build compelling cases with comprehensive data analysis
           </p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

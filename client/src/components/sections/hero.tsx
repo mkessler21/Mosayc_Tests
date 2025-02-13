@@ -16,7 +16,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-6xl font-bold mb-6"
           >
-            AI-Powered Sales Intelligence for B2B Teams
+            Deep Customer Understanding for Enterprise Sales
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -24,8 +24,8 @@ export default function Hero() {
             transition={{ delay: 0.2 }}
             className="text-xl text-muted-foreground mb-8"
           >
-            Get deep insights about your target companies and make data-driven decisions 
-            that close more deals. Join the waitlist for early access.
+            Transform fragmented data into strategic insights. Stop drowning in research 
+            and start closing more enterprise deals with AI-powered customer intelligence.
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}
@@ -36,13 +36,6 @@ export default function Hero() {
               Join the Waitlist
             </Button>
           </motion.div>
-        </div>
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block w-1/3 h-full">
-          <img
-            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40"
-            alt="B2B Sales Meeting"
-            className="object-cover rounded-l-3xl shadow-xl"
-          />
         </div>
       </div>
     </div>
