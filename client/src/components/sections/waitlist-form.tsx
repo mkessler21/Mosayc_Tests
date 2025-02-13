@@ -9,7 +9,7 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
+  FormLabel, 
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -61,7 +61,7 @@ export default function WaitlistForm() {
   };
 
   return (
-    <section id="waitlist" className="py-20 bg-muted">
+    <section id="waitlist" className="py-20 bg-black text-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,8 +70,8 @@ export default function WaitlistForm() {
           className="max-w-xl mx-auto"
         >
           <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold mb-4">Join the Waitlist</h2>
-            <p className="text-lg text-muted-foreground">
+            <h2 className="text-4xl font-bold mb-4 text-[#E87C7C]">Join the Waitlist</h2>
+            <p className="text-lg text-gray-400">
               Be among the first to experience the future of B2B sales intelligence
             </p>
           </div>
@@ -154,8 +154,7 @@ export default function WaitlistForm() {
 
               <LoadingButton
                 type="submit"
-                className="w-full"
-                size="lg"
+                className="w-full bg-[#E87C7C] hover:bg-[#E87C7C]/90 text-white"
                 loading={mutation.isPending}
               >
                 Join Waitlist

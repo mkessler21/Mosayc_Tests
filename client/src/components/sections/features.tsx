@@ -44,7 +44,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 bg-muted">
+    <section id="features" className="py-20 bg-black text-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,8 +52,10 @@ export default function Features() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">From Fragmented Data to Strategic Insights</h2>
-          <p className="text-lg text-muted-foreground">
+          <h2 className="text-4xl font-bold mb-4 text-[#E87C7C]">
+            From Fragmented Data to Strategic Insights
+          </h2>
+          <p className="text-lg text-gray-400">
             Helping AEs build compelling cases with comprehensive data analysis
           </p>
         </motion.div>
@@ -66,11 +68,11 @@ export default function Features() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="h-full">
+              <Card className="h-full bg-zinc-900 border-zinc-800 hover:bg-zinc-800 transition-colors">
                 <CardHeader>
-                  <feature.icon className="h-10 w-10 text-primary mb-4" />
-                  <CardTitle>{feature.title}</CardTitle>
-                  <CardDescription>{feature.description}</CardDescription>
+                  <feature.icon className="h-10 w-10 text-[#E87C7C] mb-4" />
+                  <CardTitle className="text-white">{feature.title}</CardTitle>
+                  <CardDescription className="text-gray-400">{feature.description}</CardDescription>
                 </CardHeader>
               </Card>
             </motion.div>
